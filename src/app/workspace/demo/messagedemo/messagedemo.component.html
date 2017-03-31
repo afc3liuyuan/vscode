@@ -1,0 +1,35 @@
+<div class="content-section">
+    <div>
+        <span class="feature-title">Modal</span>
+        <span>模态框组件包括“信息提示框”、“对话选择框”</span>
+    </div>
+</div>
+<div class="content-section implementation">
+    <p-dialog [(visible)]="display" modal="modal" width="350" responsive="true">
+        <span>
+            您已点击
+        </span>
+        <p-footer>
+            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+                <!--<button type="button" pButton icon="fa-close" (click)="display=false" label="取消"></button>-->
+                <button type="button" pButton icon="fa-check" (click)="display=false" label="确定"></button>
+            </div>
+        </p-footer>
+    </p-dialog>
+
+    <button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="信息提示框"></button>
+</div>
+<div class="content-section implementation">
+    <p-growl [value]="msgs"></p-growl>
+
+    <p-confirmDialog width="425" #cd>
+        <p-footer>
+            <button type="button" pButton icon="fa-close" label="取消" (click)="cd.reject()"></button>
+            <button type="button" pButton icon="fa-check" label="确定" (click)="cd.accept()"></button>
+        </p-footer>
+    </p-confirmDialog>
+
+    <button type="button" (click)="confirm1()" pButton icon="fa-check" label="确认"></button>
+
+    <button type="button" (click)="confirm2()" pButton icon="fa-trash" label="删除"></button>
+</div>
